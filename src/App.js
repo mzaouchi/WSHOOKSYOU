@@ -3,6 +3,7 @@ import './App.css';
 import NavMovie from './Components/NavMovie';
 import ListMovies from './Components/ListMovies';
 import AddMovie from './Components/AddMovie';
+import FilterMovie from './Components/FilterMovie';
 
 function App() {
   const [movies,setMovies] = useState([
@@ -12,11 +13,17 @@ function App() {
     {title : 'A Peine J’ouvre Les Yeux', description :'Tunis, été 2010, quelques mois avant la Révolution, Farah 18 ans passe son bac et sa famille l’imagine déjà médecin… mais elle ne voit pas les choses de la même manière. Elle chante au sein d¹un groupe de rock engagé. Elle vibre, s’enivre, découvre l’amour et sa ville de nuit contre la volonté d’Hayet, sa mère, qui connaît la Tunisie et ses interdits.',posterURL:'https://pictures.artify.tn/media/r07wsehw43shedjuick2.jpg?width=200',rating : 2, id : Math.random()},
 
   ])
+  const [textLive,setTextLive] = useState('')
+  const [rate,setRate] = useState(0)
   return (
     <div>
       <NavMovie/>
-      <AddMovie setMovies={setMovies} movies={movies}/>
-      <ListMovies movies={movies}/>
+      <div className='filterAdd'>
+        <FilterMovie textLive={textLive} rate={rate} setTextLive={setTextLive} setRate={setRate}/>
+        <AddMovie setMovies={setMovies} movies={movies}/>
+      </div>
+      
+      <ListMovies movies={movies} textLive={textLive} rate={rate}/>
     </div>
   );
 }

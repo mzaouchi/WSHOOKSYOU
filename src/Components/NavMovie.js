@@ -11,6 +11,7 @@ const NavMovie=()=>{
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Movies</Nav.Link>
           </Nav>
+          
         </Container>
       </Navbar>
     )

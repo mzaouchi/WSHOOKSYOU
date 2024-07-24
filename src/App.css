@@ -17,3 +17,16 @@
     font-weight: bold;
     background-color: white;
 }
+
+.filterAdd{
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+  margin: 10px;
+}
+
+.filterMovie{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
